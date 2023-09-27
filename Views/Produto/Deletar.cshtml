@@ -1,0 +1,43 @@
+@model ProdutoModel
+
+@{
+    ViewData["title"] = "Deletar produto";
+}
+
+<div class="container bg-dark p-5 rounded-5">
+
+     <div class="mb-5 text-center">
+    <h1 class="text-light">Deleta produto</h1>
+</div>
+
+
+<form method="post" asp-controller="Produto" asp-action="Deletar">
+    <input type="hidden" asp-for="Id" />
+    <div class="mb-5 text-center">
+        <h2 class="text-ligth"> Tem certeza que deseja excluir?</h2>
+    </div>
+  <div class="mb-3">
+    <label for="Produto" class="form-label text-light">Produto:</label>
+    <input type="text" class="form-control" asp-for="Nome" id="Nome">
+    <spam class = "text-danger" asp-validation-for="Nome"></spam>
+  </div>
+
+  <div class="mb-3">
+    <label for="Tipo" class="form-label text-light">Tipo</label>
+    <input type="text" class="form-control" asp-for="Tipo" id="Tipo">
+    <spam class = "text-danger" asp-validation-for="Tipo"></spam>
+  </div>
+
+  <div class="mb-3">
+    <label for="Preco" class="form-label text-light">Preço</label>
+    <input type="Number" class="form-control" asp-for="Preco" id="Preco">
+    <spam class = "text-danger" asp-validation-for="Tipo"></spam>
+  </div>
+
+   <div class="d-flex gap-5 mt-5">
+  <button type="submit" class="btn btn-success w-50">Deletar</button>
+  <a button type="button" class="btn btn-primary w-50" asp-controller="Produto" asp-action="Index">Voltar</a>
+  </div>
+
+  </form>
+</div>
